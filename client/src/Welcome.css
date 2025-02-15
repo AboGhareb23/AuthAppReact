@@ -1,0 +1,120 @@
+/* General Reset */
+body, html, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Toolbar Styling */
+.toolbar {
+    width: 100%; /* عرض الصفحة بالكامل */
+    background-color: #1a202c; /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    position: fixed; /* يجعل التولبار ثابتًا في أعلى الصفحة */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* لضمان أن التولبار فوق كل العناصر الأخرى */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+.toolbar-container {
+    width: 100%;
+    max-width: 1200px; /* حد أقصى لعرض المحتوى */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation Links */
+.toolbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #edf2f7;
+}
+
+/* User Section */
+.user-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.username {
+    font-size: 16px;
+    color: #edf2f7;
+    font-weight: bold;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #4a5568;
+    color: #edf2f7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .toolbar-nav {
+        display: none; /* إخفاء الروابط في الشاشات الصغيرة */
+    }
+
+    .user-section {
+        flex: 1;
+        justify-content: flex-end;
+    }
+}
